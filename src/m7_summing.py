@@ -6,7 +6,7 @@ in its simplest classic forms:
 Authors: David Mutchler, Dave Fisher, Vibha Alangar, Mark Hays, Amanda Stouder,
          their colleagues and Shamus Sparling.
 """  # done: 1. PUT YOUR NAME IN THE ABOVE LINE.
-
+import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -44,6 +44,7 @@ def run_test_sum_cosines():
     print('Test 1 expected:', expected)
     print('       actual:  ', answer)
 
+
 def sum_cosines(n):
     """
     What comes in:  A non-negative integer n.
@@ -62,8 +63,11 @@ def sum_cosines(n):
     #   No fair running the code of  sum_cosines  to GENERATE
     #   test cases; that would defeat the purpose of TESTING!
     # ------------------------------------------------------------------
+    total = 0
     for k in range(n):
-        total = total + math.
+        total = total + math.cos(k)
+
+    return total
 
 def run_test_sum_square_roots():
     """ Tests the   sum_square_roots   function. """
@@ -79,6 +83,21 @@ def run_test_sum_square_roots():
     print('--------------------------------------------------')
     print('Testing the   sum_square_roots   function:')
     print('--------------------------------------------------')
+
+    expected = 11.854408
+    answer = sum_square_roots(5)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+
+    expected = 19
+    answer = sum_square_roots(7)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+
+    expected = 3.5
+    answer = sum_square_roots(2)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
 
 
 def sum_square_roots(n):
@@ -103,7 +122,11 @@ def sum_square_roots(n):
     #   test cases; that would defeat the purpose of TESTING!
     # ------------------------------------------------------------------
 
+    total = 0
+    for k in range(n):
+        total = total + math.sqrt((k + 1) * 2)
 
+    return total
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
